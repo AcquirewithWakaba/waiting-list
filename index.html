@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakaba</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gupter&family=Noto+Serif+Display:ital,wght@0,300;1,300&display=swap');
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .left-half, .right-half {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left-half h2 {
+            color:white;
+            font-family: "Gupter", serif;
+            font-weight: 400;
+        }
+
+        .left-half {
+            background-color: #0C0E11; 
+            /* background-image: url('bg.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .right-half {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-half label {
+            font-family: "Noto Serif Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            /* max-width: 150px; */
+        }
+        h2 {
+            margin-top: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: auto;
+        }
+        input, select, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        .checkbox-group label {
+            margin-right: 20px;
+        }
+        .submit-button {
+            background-color:red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .left-half, .right-half {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // function postToGoogle() {
+        //     var name = $("#name").val();
+        //     var email = $("#email").val();
+    
+        //     var roles = [];
+        //     $("input[name='entry.326583527']:checked").each(function() {
+        //         roles.push($(this).val());
+        //     });
+    
+        //     var subscribe = $("input[name='entry.58775912']:checked").val();
+        //     var duration = $("#duration").val();
+        //     var location = $("#location").val();
+        //     var valuation = $("#valuation").val();
+        //     var betaTesting = $("input[name='entry.1467345119']:checked").val();
+    
+        //     $.ajax({
+        //         url: "https://docs.google.com/forms/d/e/1FAIpQLScIab3gi1Emlx9nyvf_TXkHM4LDWU6eWzOswMGG01m2HjbUow/formResponse", 
+        //         data: {
+        //             "entry.299518917": name,
+        //             "entry.1497671722": email,
+        //             "entry.326583527": roles.join(','), 
+        //             "entry.58775912": subscribe,
+        //             "entry.391579683": duration,
+        //             "entry.1056506134": location,
+        //             "entry.882623005": valuation,
+        //             "entry.1467345119": betaTesting
+        //         },
+        //         type: "POST",
+        //         dataType: "xml",
+        //         success: function() {
+        //             $('#waitinglist').trigger('reset');
+        //         },
+        //         error: function(x, y, z) {
+        //             console.error('Error:', x, y, z); 
+        //             // $('#waitinglist').trigger('reset');
+        //         }
+        //     });
+    
+        //     return false;
+        // }
+    
+        // $(document).ready(function() {
+        //     $("#waitinglist").on("submit", function(event) {
+        //         event.preventDefault(); 
+        //         postToGoogle();
+        //     });
+        // });
+    </script>    
+    <div class="left-half">
+        <div class="logo">
+            <img src="logo1.png" alt="Logo">
+        </div>
+        <h2>✔ Enhanced transparency through accurate, up-to-date business information</h2>
+        <h2>✔ Streamlined transactions with support for negotiations, due diligence and legal paperwork</h2>
+    </div>
+    <div class="right-half">
+        <h2 style="text-align: center;">Get Started with Us!</h2>
+        <form id="waitinglist" action="https://docs.google.com/forms/d/e/1FAIpQLScIab3gi1Emlx9nyvf_TXkHM4LDWU6eWzOswMGG01m2HjbUow/formResponse" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="entry.299518917" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="entry.1497671722" required> 
+        
+            <label>Are you a:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="seller" name="entry.326583527" value="Seller">
+                <label for="seller">Seller</label>
+                <input type="checkbox" id="buyer" name="entry.326583527" value="Buyer">
+                <label for="buyer">Buyer</label>
+            </div>
+        
+            <label>Subscribe to our newsletter?</label>
+            <div class="checkbox-group">
+                <input type="radio" id="subscribe-yes" name="entry.58775912" value="Yes"> 
+                <label for="subscribe-yes">Yes</label>
+                <input type="radio" id="subscribe-no" name="entry.58775912" value="No">
+                <label for="subscribe-no">No</label>
+            </div>
+        
+            <label for="duration">How soon are you looking to acquire/sell:</label>
+            <select id="duration" name="entry.391579683" required>
+                <option value="" disabled selected></option>
+                <option value="Immediate (0-3 months)">Immediate (0-3 months)</option>
+                <option value="Short-Term (3-6 Months)">Short-Term (3-6 Months)</option>
+                <option value="In the Near Future (6-12 Months)">In the Near Future (6-12 Months)</option>
+                <option value="Long-Term (12+ Months)">Long-Term (12+ Months)</option>
+            </select>
+        
+            <label for="location">Geographic Location:</label>
+            <input type="text" id="location" name="entry.1056506134" required>
+        
+            <label for="valuation">Valuation of Company:</label>
+            <select id="valuation" name="entry.882623005" required>
+                <option value="" disabled selected></option>
+                <option value="Less than $20K">Less than $20K</option>
+                <option value="$20K-$250K">$20K-$250K</option>
+                <option value="$250K-$1M">$250K-$1M</option>
+                <option value="More than $1M">More than $1M</option>
+            </select>
+        
+            <label>Interested in beta testing?</label>
+            <div class="checkbox-group">
+                <input type="radio" id="beta-yes" name="entry.1467345119" value="Yes">
+                <label for="beta-yes">Yes</label>
+                <input type="radio" id="beta-no" name="entry.1467345119" value="No">
+                <label for="beta-no">No</label>
+                <input type="radio" id="beta-no" name="entry.1467345119" value="Maybe, Need more information">
+                <label for="beta-maybe">Maybe, Need more information</label>
+            </div>
+        
+            <button type="submit" class="submit-button">Submit</button>
+        </form>     
+    </div>
+</body>
+</html>
