@@ -13,14 +13,13 @@
             display: flex;
             flex-wrap: wrap;
             height: 100vh;
-            
+            overflow: hidden;
         }
 
         .left-half, .right-half {
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
-            overflow-y: auto; /* Enable vertical scrolling */
         }
 
         .left-half h2 {
@@ -31,23 +30,21 @@
 
         .left-half {
             background-color: #0C0E11;
-            /* background-image: url('bg.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat; */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            height: 100vh;
         }
 
         .right-half {
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Align items at the top */
-            overflow-y: auto; /* Allow vertical scrolling */
+            justify-content: flex-start; 
+            overflow-y: auto; 
+            height: 100vh;
         }
 
         .right-half label {
