@@ -11,13 +11,13 @@
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             height: 100vh;
-            overflow: hidden;
+            overflow-y: auto;
         }
 
         .left-half, .right-half {
-            width: 50%;
+            width: 100%;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -30,12 +30,12 @@
 
         .left-half {
             background-color: #0C0E11;
+            color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 100vh;
         }
 
         .right-half {
@@ -43,8 +43,6 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start; 
-            overflow-y: auto; 
-            height: 100vh;
         }
 
         .right-half label {
@@ -58,7 +56,8 @@
         }
 
         .logo img {
-            /* max-width: 150px; */
+            max-width: 100%;
+            height: auto;
         }
 
         h2 {
@@ -70,7 +69,7 @@
             flex-direction: column;
             max-width: 500px;
             margin: auto;
-            padding: 10px; /* Add padding for better spacing */
+            padding: 10px;
         }
 
         input, select, button {
@@ -79,6 +78,7 @@
             font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            width: 100%;
         }
 
         .checkbox-group {
@@ -100,66 +100,33 @@
             cursor: pointer;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 769px) {
+            body {
+                flex-direction: row; /* Split screen layout on larger screens */
+                overflow-y: hidden; /* No vertical scrolling needed */
+            }
+
             .left-half, .right-half {
-                width: 100%;
-                padding: 10px;
+                width: 50%; /* Half-width for split screen */
+                height: 100vh; /* Full viewport height */
+                padding: 20px; /* Adjust padding as needed */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .left-half, .right-half {
+                padding: 30px; /* More padding for larger screens */
+            }
+
+            .left-half h2, .right-half h2 {
+                font-size: 2rem; /* Larger font size for larger screens */
             }
         }
 
     </style>
 </head>
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        // function postToGoogle() {
-        //     var name = $("#name").val();
-        //     var email = $("#email").val();
-    
-        //     var roles = [];
-        //     $("input[name='entry.326583527']:checked").each(function() {
-        //         roles.push($(this).val());
-        //     });
-    
-        //     var subscribe = $("input[name='entry.58775912']:checked").val();
-        //     var duration = $("#duration").val();
-        //     var location = $("#location").val();
-        //     var valuation = $("#valuation").val();
-        //     var betaTesting = $("input[name='entry.1467345119']:checked").val();
-    
-        //     $.ajax({
-        //         url: "https://docs.google.com/forms/d/e/1FAIpQLScIab3gi1Emlx9nyvf_TXkHM4LDWU6eWzOswMGG01m2HjbUow/formResponse", 
-        //         data: {
-        //             "entry.299518917": name,
-        //             "entry.1497671722": email,
-        //             "entry.326583527": roles.join(','), 
-        //             "entry.58775912": subscribe,
-        //             "entry.391579683": duration,
-        //             "entry.1056506134": location,
-        //             "entry.882623005": valuation,
-        //             "entry.1467345119": betaTesting
-        //         },
-        //         type: "POST",
-        //         dataType: "xml",
-        //         success: function() {
-        //             $('#waitinglist').trigger('reset');
-        //         },
-        //         error: function(x, y, z) {
-        //             console.error('Error:', x, y, z); 
-        //             // $('#waitinglist').trigger('reset');
-        //         }
-        //     });
-    
-        //     return false;
-        // }
-    
-        // $(document).ready(function() {
-        //     $("#waitinglist").on("submit", function(event) {
-        //         event.preventDefault(); 
-        //         postToGoogle();
-        //     });
-        // });
-    </script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
     <div class="left-half">
         <div class="logo">
             <img src="logo1.png" alt="Logo">
