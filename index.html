@@ -4,145 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wakaba</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gupter:wght@400&family=Noto+Serif+Display:wght@100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400..900&display=swap');
-
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        .left-half, .right-half {
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .left-half h2 {
-            color: white;
-            font-family: "Gupter", serif;
-            font-weight: 400;
-        }
-
-        .left-half {
-            background-color: #0C0E11;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .right-half {
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; 
-        }
-
-        .right-half label {
-            font-family: "Alegreya", serif;
-            font-optical-sizing: auto;
-            font-weight: 500;
-            font-style: normal;
-        }
-
-
-
-        .logo {
-            margin-bottom: 20px;
-        }
-
-        .logo img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        h2 {
-            margin-top: 0;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 500px;
-            margin: auto;
-            padding: 10px;
-        }
-
-        input, select, button {
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            width: 100%;
-        }
-
-        input {
-            width: auto;
-        }
-
-
-        .checkbox-group {
-            margin-bottom: 15px;
-        }
-
-        .checkbox-group input {
-            margin-right: 10px;
-        }
-
-        .checkbox-group label {
-            margin-right: 20px;
-        }
-
-        .submit-button {
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        @media (min-width: 769px) {
-            body {
-                flex-direction: row; /* Split screen layout on larger screens */
-                overflow-y: hidden; /* No vertical scrolling needed */
-            }
-
-            .left-half, .right-half {
-                width: 50%; /* Half-width for split screen */
-                height: 100vh; /* Full viewport height */
-                padding: 20px; /* Adjust padding as needed */
-            }
-
-            .left-half {
-                height: 100vh;
-            }
-
-            .right-half {
-                overflow-y: auto; 
-                height: 100vh;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .left-half, .right-half {
-                padding: 30px; /* More padding for larger screens */
-            }
-
-            .left-half h2, .right-half h2 {
-                font-size: 2rem; /* Larger font size for larger screens */
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
@@ -154,7 +16,7 @@
         <h2>✔ Streamlined transactions with support for negotiations, due diligence and legal paperwork</h2>
     </div>
     <div class="right-half">
-        <h2 style="text-align: center;">Get Started with Us!</h2>
+        <h2 style="text-align: center; font-size: 30px;">Unlock Exclusive Deals!</h2>
         <form id="waitinglist" action="https://docs.google.com/forms/d/e/1FAIpQLScIab3gi1Emlx9nyvf_TXkHM4LDWU6eWzOswMGG01m2HjbUow/formResponse" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="entry.299518917" required>
@@ -207,7 +69,7 @@
                 <label for="beta-no">No</label>
             </div>
         
-            <button type="submit" class="submit-button">Submit</button>
+            <button type="submit" class="submit-button">Reserve My Spot!</button>
         </form>     
     </div>
 </body>

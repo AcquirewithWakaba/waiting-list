@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400..900&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.left-half, .right-half {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left-half {
+    background-color: #0C0E11;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.left-half h2 {
+    color: white;
+    font-family: "Alegreya", serif;
+}
+
+.right-half {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+}
+
+.right-half h2 {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.right-half label {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+}
+
+input, select, button {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+input {
+    width: auto;
+}
+
+
+.checkbox-group {
+    margin-bottom: 15px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    margin-right: 20px;
+}
+
+.submit-button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    body {
+        flex-direction: row; 
+        overflow-y: hidden; 
+    }
+
+    .left-half, .right-half {
+        width: 50%;
+        height: 100vh; 
+        padding: 20px;
+    }
+
+    .left-half {
+        height: 100vh;
+        font-family: "Alegreya", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+    }
+
+    .right-half {
+        overflow-y: auto; 
+        height: 100vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .left-half, .right-half {
+        padding: 30px; 
+    }
+
+    .left-half h2, .right-half h2 {
+        font-size: 2rem; 
+    }
+}
